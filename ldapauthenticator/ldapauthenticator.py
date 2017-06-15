@@ -161,7 +161,7 @@ class LDAPAuthenticator(Authenticator):
                     username=username,
                     userdn=userdn
             ))
-            conn = ldap3.Connection(server, user=userdn, password=password)
+            conn = ldap3.Connection(server, user=username, password=password)
             return conn
         
         # Protect against invalid usernames as well as LDAP injection attacks
